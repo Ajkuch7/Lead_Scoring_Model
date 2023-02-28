@@ -19,3 +19,13 @@ Steps should be:
 3) Testing ( on (100-Y) percent of data)
 
 4) Evaluate the performance using metrics such as accuracy, precision, recall and F1-score.
+
+
+Output
+In this code, I first load the dataset and drop rows with status other than 'WON' or 'LOST'. I also drop irrelevant columns that are not useful for predicting the lead score. I fill the missing values with a constant '9b2d5b4678781e53038e91ea5324530a03f27dc1d0e5f6c9bc9d493a23be9de0' which represents NaN. I then encode the categorical columns using label encoding
+
+I split the data into training and testing sets with a test size of 20%. I train a Random Forest Regressor model with 100 trees and make predictions on the testing set.
+
+We have to do classification task by setting tthershold value. eg: if we set the threshold value to 50, we can classify the leads with predicted scores greater than or equal to 50 as 'WON', and those with scores less than 50 as 'LOST'.
+
+Based on the output of the evaluation, the model has perfect performance on the testing set, as indicated by the accuracy, precision, recall, and F1-score values of 1.00. However, it's important to keep in mind that this may be due to the imbalanced nature of the dataset, where the majority of leads have either 'WON' or 'LOST' status.
